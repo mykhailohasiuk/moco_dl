@@ -15,3 +15,18 @@ def create_sphere(field_size, radius, thickness=1):
                 if inner_shape[x, y, z]:
                     sphere[x, y, z] = False
     return sphere
+
+
+def create_3d_circle(field_size, radius, thickness=1):
+    sphere = create_sphere(field_size, radius, thickness)
+    circle = np.zeros(sphere.shape)
+    x = int(sphere.shape[0]/2)
+
+    circle[x, :, :] = sphere[x, :, :]
+    return circle
+
+def create_circle(field_size, radius, thickness=1):
+    sphere = create_sphere(field_size, radius, thickness)
+    x = int(sphere.shape[0]/2)
+    circle = np.array(sphere[x, :, :])
+    return circle
