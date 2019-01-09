@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 
 # rot_img = input_img
 #
-# spherical_image = create_spherical_matrix_from_cartesian(input_img)
+spherical_image = np.load('/Users/mhas0023/dev/DL_spherical/spherical_circle_try_1.npy')
 # np.save('./outputs/spherical_sphere_aproach_2', spherical_image)
 # spherical_image = np.load('./outputs/spherical_sphere_aproach_2.npy')
 # np.save('./outputs/3d_circle_aproach_2', spherical_image)
@@ -25,8 +25,10 @@ import matplotlib.pyplot as plt
 # print(str(np.deg2rad(270) / np.pi) + 'Pi')
 # plot_2d_image(spherical_image[:,:,14])
 
-spherical_image = np.load('./outputs/3d_circle_aproach_2.npy')
+# spherical_image = np.load('./outputs/3d_circle_aproach_2.npy')
 recreated_cartesian = recreate_cartesian_image(spherical_image)
 
-np.save('recreated_cartesian_try1', recreated_cartesian)
+np.save('spherical_circle_try_1', spherical_image)
+np.save('recreated_cartesian_try_1', recreated_cartesian)
 nib.save(nib.Nifti1Image(recreated_cartesian, affine=None), 'recreated_cart_circle_1.nii')
+nib.save(nib.Nifti1Image(spherical_image, affine=None), 'spherical_circle_1.nii')

@@ -33,7 +33,7 @@ def reverse_distance_weighted_value(d1, d2, d3, d4, d5, d6, d7, d8, v1, v2, v3, 
     mediated_value = v1 * factor(d1) + v2 * factor(d2) + v3 * factor(d3) + v4 * factor(d4) + \
                      v5 * factor(d5) + v6 * factor(d6) + v7 * factor(d7) + v8 * factor(d8)
 
-    return mediated_value/distance_mult
+    return mediated_value * distance_mult
 
     # return d1*v1 + d2*v2 + d3*v3 + d4*v4 + d5*v5 + d6*v6 + d7*v7 + d8*v8
 
@@ -144,10 +144,14 @@ def recreate_cartesian_image(spherical_image):
     carteisan_image = np.zeros((x, y, z))
 
     for index, value in np.ndenumerate(carteisan_image):
-        hxy = np.hypot(index[0] - (x/2), index[1]-(y/2))
-        r = np.hypot(hxy, index[2] - (z/2))
-        el = np.arctan2(index[2] - (z/2), hxy) * (180 / np.pi)
-        az = np.arctan2(index[1] - (y/2), index[0] - (x/2)) * (180 / np.pi)
+        centered_x = index[0] - x / 2
+        centered_y = index[1] - y / 2
+        centered_z = index[2] - z / 2
+
+        hxy = np.hypot(centered_x, centered_y)
+        r = np.hypot(hxy, centered_z)
+        el = np.arctan2(centered_z, hxy) * (180 / np.pi)
+        az = np.arctan2(centered_y, centered_x) * (180 / np.pi)
 
         if 0 <= r < spherical_shape[-1]-1:
 
