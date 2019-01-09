@@ -1,67 +1,32 @@
 from spherical_transform.spherical_coordinates import *
 from spherical_transform.polar_coordinates import *
 from spherical_transform.sphere_creation import *
-from scipy.ndimage import shift
+from scipy.ndimage import shift, rotate
 from plotting_and_displaying.plot_3d_volume import plot_3d_image, plot_2d_image, plot_nib_3d
-from mpl_toolkits.mplot3d import Axes3D
-from nibabel.viewers import OrthoSlicer3D
+import numpy as np
+
 import nibabel as nib
 
 import matplotlib.pyplot as plt
 
-input_sphere = create_3d_circle(32, 16, 1)
+# input_img = create_3d_circle(64, 32, 1).astype(float)
+# rot_img = np.round(rotate(input_img, -45, [0, 1], reshape=False))
+
+# rot_img = input_img
 #
-float_sphere = input_sphere.astype(float)
-#
-#
-new_circle = np.zeros(float_sphere.shape)
-new_circle[0,:,:] = float_sphere[16,:,:]
+# spherical_image = create_spherical_matrix_from_cartesian(input_img)
+# np.save('./outputs/spherical_sphere_aproach_2', spherical_image)
+# spherical_image = np.load('./outputs/spherical_sphere_aproach_2.npy')
+# np.save('./outputs/3d_circle_aproach_2', spherical_image)
+# plot_3d_image(spherical_image)
+# nib.save(nib.Nifti1Image(spherical_image, affine=None), 'circle_sph_test_2.nii')
+# nib.save(nib.Nifti1Image(input_img, affine=None), 'circle_cart_test_2.nii')
+# plot_3d_image(spherical_image)
+# print(str(np.deg2rad(270) / np.pi) + 'Pi')
+# plot_2d_image(spherical_image[:,:,14])
 
-plot_3d_image(new_circle)
-# # plot_3d_image(input_sphere)
-# # print(float_circle.shape)
-# shifted_sphere = shift(float_sphere, [-4, 0, 0])
-#
-# spherical_image = create_spherical_matrix_from_cartesian(float_sphere)
-# # print(spherical_image.shape)
-#
-# # data = np.array(
-# #     [
-# #         [
-# #             [0,1,2],
-# #             [3,4,5],
-# #             [6,7,8]
-# #         ],
-# #         [
-# #             [0,1,2],
-# #             [3,4,5],
-# #             [6,7,8]
-# #         ]
-# #      ]
-# # )
-# np.save('./outputs/spherical_circle_shifted_interpolated1', spherical_image)
-# img = np.load('./outputs/spherical_circle_interpolated1.npy')
-nib.save(nib.Nifti1Image(new_circle, affine=None), 'shifted_circle_cartesian.nii')
+spherical_image = np.load('./outputs/3d_circle_aproach_2.npy')
+recreated_cartesian = recreate_cartesian_image(spherical_image)
 
-# sphere = np.load('outputs/spherical_interpolated1.npy')
-
-# a = np.sin(np.linspace(0, np.pi, 20))
-
-# b = np.sin(np.linspace(0, np.pi*5, 20))
-# data = np.outer(a, b)[..., np.newaxis] * a
-# OrthoSlicer3D(data).show()
-
-# image = np.load('./outputs/spher_sphere.npy')
-
-
-
-# np.save('./outputs/spher_circle', spherical_image)
-
-# circle = create_circle(64, 30, 1)
-# shifted_circle = shift(circle, [-32, -32])
-
-
-# polar_circle = create_polar_image(circle)
-
-# plot_2d_image(polar_circle)
-
+np.save('recreated_cartesian_try1', recreated_cartesian)
+nib.save(nib.Nifti1Image(recreated_cartesian, affine=None), 'recreated_cart_circle_1.nii')

@@ -16,8 +16,8 @@ def plot_nib_3d(image):
     nib.viewers.OrthoSlicer3D(image).show()
 
 
-def plot_2d_image(image):
-    plt.imshow(image, cmap='gray')
+def plot_2d_image(image, cmap='gray'):
+    plt.imshow(image, cmap=cmap)
     plt.show()
 
 

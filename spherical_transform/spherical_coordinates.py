@@ -99,9 +99,16 @@ def find_spherical_matrix_dimensions(cartesian_image_shape):
     theta = 360
     phi = 360
     hxy = np.hypot(cartesian_image_shape[0], cartesian_image_shape[1])
-    r = int(np.floor(np.hypot(hxy, cartesian_image_shape[2])/2))
+    r = int(np.ceil(np.hypot(hxy, cartesian_image_shape[2])/2))
 
     return theta, phi, r
+
+def find_cartesian_matrix_dimensions(spherical_image_shape):
+
+    r = spherical_image_shape[-1]
+    x = y = z = np.int(np.floor((2 * r) / np.sqrt(3)))
+
+    return x, y, z
 
 
 def create_spherical_matrix_from_cartesian(cartesian_image):
@@ -112,10 +119,10 @@ def create_spherical_matrix_from_cartesian(cartesian_image):
     sph_img = np.zeros((az, el, r))
 
     for index, value in np.ndenumerate(sph_img):
-        rcos_theta = index[2] * np.cos(index[1])
-        x = cart_shape[0]/2 + rcos_theta * np.cos(index[0])
-        y = cart_shape[1]/2 + rcos_theta * np.sin(index[0])
-        z = cart_shape[2]/2 + index[2] * np.sin(index[1])
+        rcos_theta = index[2] * np.cos(np.deg2rad(index[1]))
+        x = cart_shape[0]/2 + rcos_theta * np.deg2rad(index[0])
+        y = cart_shape[1]/2 + rcos_theta * np.sin(np.deg2rad(index[0]))
+        z = cart_shape[2]/2 + index[2] * np.sin(np.deg2rad(index[1]))
 
         if 0 <= x < cart_shape[0]-1 and 0 <= y < cart_shape[1]-1 and 0 <= z < cart_shape[2]-1:
 
@@ -123,11 +130,33 @@ def create_spherical_matrix_from_cartesian(cartesian_image):
                 sys.stdout.write("\r{0} {1} {2}".format(*index))
                 sys.stdout.flush()
 
-            sph_img[index[0], index[1], index[2]] = interpolate_3d_point((x, y, z), cartesian_image)
+            sph_img[index] = interpolate_3d_point((x, y, z), cartesian_image)
 
-    print('\nDone with creating polar image... \n Building a graph...')
+    print('\nDone with creating polar image... \nBuilding a graph...')
     return sph_img
 
 
+def recreate_cartesian_image(spherical_image):
+    spherical_shape = spherical_image.shape
+    x, y, z = find_cartesian_matrix_dimensions(spherical_shape)
+    print('\rCartesian image dimensions calculated as {0} * {1} * {2}'.format(*[x, y, z]))
 
+    carteisan_image = np.zeros((x, y, z))
 
+    for index, value in np.ndenumerate(carteisan_image):
+        hxy = np.hypot(index[0] - (x/2), index[1]-(y/2))
+        r = np.hypot(hxy, index[2] - (z/2))
+        el = np.arctan2(index[2] - (z/2), hxy) * (180 / np.pi)
+        az = np.arctan2(index[1] - (y/2), index[0] - (x/2)) * (180 / np.pi)
+
+        if 0 <= r < spherical_shape[-1]-1:
+
+            carteisan_image[index] = interpolate_3d_point((az, el, r), spherical_image)
+
+        if index[1] % 10 == 0 or index[1] == 0:
+            sys.stdout.write("\r{0} {1} {2}".format(r, el, z))
+            sys.stdout.flush()
+
+    print('\ndone with building cartesian image...')
+
+    return carteisan_image
