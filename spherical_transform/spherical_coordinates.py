@@ -106,7 +106,8 @@ def find_spherical_matrix_dimensions(cartesian_image_shape):
 def find_cartesian_matrix_dimensions(spherical_image_shape):
 
     r = spherical_image_shape[-1]
-    x = y = z = np.int(np.floor((2 * r) / np.sqrt(3)))
+    # x = y = z = np.int(np.floor((2 * r) / np.sqrt(3)))
+    x = y = z = np.int(np.floor(2 * r / np.sqrt(3))) - 1
 
     return x, y, z
 
@@ -144,18 +145,20 @@ def recreate_cartesian_image(spherical_image):
     carteisan_image = np.zeros((x, y, z))
 
     for index, value in np.ndenumerate(carteisan_image):
-        centered_x = index[0] - x / 2
-        centered_y = index[1] - y / 2
-        centered_z = index[2] - z / 2
 
-        hxy = np.hypot(centered_x, centered_y)
-        r = np.hypot(hxy, centered_z)
-        el = np.arctan2(centered_z, hxy) * (180 / np.pi)
-        az = np.arctan2(centered_y, centered_x) * (180 / np.pi)
+        center_x = index[0] - x / 2
+        center_y = index[1] - y / 2
+        center_z = index[2] - z / 2
 
-        if 0 <= r < spherical_shape[-1]-1:
+        r = np.sqrt(center_x ** 2 + center_y ** 2 + center_z**2)
+        phi = np.rad2deg(np.arctan2(center_x, center_y))
 
-            carteisan_image[index] = interpolate_3d_point((az, el, r), spherical_image)
+        hxy = np.sqrt(center_x ** 2 + center_y ** 2)
+
+        el = np.rad2deg(np.arctan2(center_z, hxy))
+        az = np.rad2deg(np.arctan2(center_y, center_x))
+
+        carteisan_image[index] = interpolate_3d_point((az, el, r), spherical_image)
 
         if index[1] % 10 == 0 or index[1] == 0:
             sys.stdout.write("\r{0} {1} {2}".format(r, el, z))
