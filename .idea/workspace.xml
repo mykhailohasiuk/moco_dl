@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0dcffe9-8dee-4597-9697-680780e4ce6e" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/inputs/avg152T1_RL_nifti.nii" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plotting_and_displaying/plot_3d_volume.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotting_and_displaying/plot_3d_volume.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spherical_transform/interpolation.py" beforeDir="false" afterPath="$PROJECT_DIR$/spherical_transform/interpolation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spherical_transform/polar_coordinates.py" beforeDir="false" afterPath="$PROJECT_DIR$/spherical_transform/polar_coordinates.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spherical_transform/sphere_creation.py" beforeDir="false" afterPath="$PROJECT_DIR$/spherical_transform/sphere_creation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spherical_transform/spherical_coordinates.py" beforeDir="false" afterPath="$PROJECT_DIR$/spherical_transform/spherical_coordinates.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
@@ -18,8 +23,8 @@
       <file leaf-file-name="sphere_creation.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spherical_transform/sphere_creation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="300">
+              <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -30,8 +35,8 @@
       <file leaf-file-name="spherical_coordinates.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spherical_transform/spherical_coordinates.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="577">
-              <caret line="158" column="43" selection-start-line="158" selection-start-column="43" selection-end-line="158" selection-end-column="43" />
+            <state relative-caret-position="405">
+              <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -42,8 +47,8 @@
       <file leaf-file-name="interpolation.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spherical_transform/interpolation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="745">
-              <caret line="78" column="22" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
+            <state relative-caret-position="301">
+              <caret line="91" selection-start-line="91" selection-end-line="122" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -51,8 +56,8 @@
       <file leaf-file-name="polar_coordinates.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spherical_transform/polar_coordinates.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="40" selection-start-line="40" selection-end-line="43" selection-end-column="60" />
+            <state relative-caret-position="461">
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
             </state>
           </provider>
         </entry>
@@ -60,8 +65,8 @@
       <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="82" selection-start-line="16" selection-start-column="82" selection-end-line="16" selection-end-column="82" />
+            <state relative-caret-position="135">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
               <folding>
                 <element signature="e#0#55#0" expanded="true" />
               </folding>
@@ -72,8 +77,8 @@
       <file leaf-file-name="plot_3d_volume.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plotting_and_displaying/plot_3d_volume.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+            <state relative-caret-position="315">
+              <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -109,20 +114,20 @@
         <option value="$PROJECT_DIR$/sherical_transform/spherical_coordinates.py" />
         <option value="$PROJECT_DIR$/spherical_transform/sphere_creation" />
         <option value="$PROJECT_DIR$/spherical_transform/__init__.py" />
+        <option value="$PROJECT_DIR$/spherical_transform/polar_coordinates.py" />
+        <option value="$PROJECT_DIR$/plotting_and_displaying/plot_3d_volume.py" />
         <option value="$PROJECT_DIR$/spherical_transform/sphere_creation.py" />
         <option value="$PROJECT_DIR$/spherical_transform/interpolation.py" />
-        <option value="$PROJECT_DIR$/plotting_and_displaying/plot_3d_volume.py" />
-        <option value="$PROJECT_DIR$/spherical_transform/polar_coordinates.py" />
         <option value="$PROJECT_DIR$/spherical_transform/spherical_coordinates.py" />
         <option value="$PROJECT_DIR$/test.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="586" />
-    <option name="y" value="78" />
-    <option name="width" value="1271" />
-    <option name="height" value="1276" />
+    <option name="x" value="592" />
+    <option name="y" value="199" />
+    <option name="width" value="1395" />
+    <option name="height" value="1367" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -140,12 +145,7 @@
             <path>
               <item name="DL_spherical" type="b2602c69:ProjectViewProjectNode" />
               <item name="DL_spherical" type="462c0819:PsiDirectoryNode" />
-              <item name="plotting_and_displaying" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DL_spherical" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DL_spherical" type="462c0819:PsiDirectoryNode" />
-              <item name="spherical_transform" type="462c0819:PsiDirectoryNode" />
+              <item name="inputs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -156,6 +156,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/inputs" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -251,18 +256,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="586" y="78" width="1271" height="1276" extended-state="0" />
+    <frame x="592" y="199" width="1395" height="1367" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.22131814" side_tool="true" visible="true" weight="0.3375742" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.22468588" side_tool="true" visible="true" weight="0.31259844" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3293617" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.3293617" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.7786819" visible="true" weight="0.3375742" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27908868" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.7753141" visible="true" weight="0.31259844" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19881745" />
       <window_info anchor="right" id="R Packages" order="3" />
       <window_info anchor="right" id="R Graphics" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4979658" weight="0.32909244" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4965398" weight="0.32834646" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -366,44 +371,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plotting_and_displaying/plot_3d_volume.py">
+    <entry file="file://$PROJECT_DIR$/spherical_transform/polar_coordinates.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="461">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spherical_transform/interpolation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="745">
-          <caret line="78" column="22" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
+        <state relative-caret-position="301">
+          <caret line="91" selection-start-line="91" selection-end-line="122" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spherical_transform/sphere_creation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="300">
+          <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spherical_transform/polar_coordinates.py">
+    <entry file="file://$PROJECT_DIR$/plotting_and_displaying/plot_3d_volume.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="40" selection-start-line="40" selection-end-line="43" selection-end-column="60" />
+        <state relative-caret-position="315">
+          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spherical_transform/spherical_coordinates.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="158" column="43" selection-start-line="158" selection-start-column="43" selection-end-line="158" selection-end-column="43" />
+        <state relative-caret-position="405">
+          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -412,8 +417,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="82" selection-start-line="16" selection-start-column="82" selection-end-line="16" selection-end-column="82" />
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
           </folding>

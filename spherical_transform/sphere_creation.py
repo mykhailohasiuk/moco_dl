@@ -14,7 +14,7 @@ def create_sphere(field_size, radius, thickness=1):
             for z in range(inner_shape.shape[2]):
                 if inner_shape[x, y, z]:
                     sphere[x, y, z] = False
-    return sphere
+    return sphere.astype(float)
 
 
 def create_3d_circle(field_size, radius, thickness=1):

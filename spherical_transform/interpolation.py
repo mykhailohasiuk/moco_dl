@@ -87,3 +87,38 @@ def interpolate_3d_point(point, array_3d):
 #
 # value = interpn(point, data, np.array(point).T)
 # print(value)
+
+
+def interp_v2((x, y, z), array):
+    x0 = np.int(np.floor(x))
+    x1 = np.int(np.ceil(x))
+    y0 = np.int(np.floor(y))
+    y1 = np.int(np.ceil(y))
+    z0 = np.int(np.floor(z))
+    z1 = np.int(np.ceil(z))
+
+    xd = (x - x0)/(x1-x0)
+    yd = (y - y0) / (y1 - y0)
+    zd = (z - z0) / (z1 - z0)
+
+    c000 = array[x0, y0, z0]
+    c001 = array[x0, y0, z1]
+    c010 = array[x0, y1, z0]
+    c011 = array[x0, y1, z1]
+    c100 = array[x1, y0, z0]
+    c101 = array[x1, y0, z1]
+    c110 = array[x1, y1, z0]
+    c111 = array[x1, y1, z1]
+
+    c00 = (c000*(1 - xd)) + (c100 * xd)
+    c01 = (c001*(1 - xd)) + (c101 * xd)
+    c10 = (c010*(1 - xd)) + (c110 * xd)
+    c11 = (c011*(1 - xd)) + (c111 * xd)
+
+    c0 = (c00 * (1-yd)) + (c10 * yd)
+    c1 = (c01 * (1 - yd)) + (c11 * yd)
+
+    c = (c0 * (1-zd)) + (c1 * zd)
+
+    return c
+
